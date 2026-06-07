@@ -1,0 +1,106 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;500;600;700&family=Outfit:wght@500;600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* Sink brand palette */
+  --font-body: 'DM Sans', sans-serif;
+  --font-display: 'Outfit', sans-serif;
+
+  /* Brand colors as CSS variables */
+  --sink-yellow: 40 94% 78%;      /* #FBDB93 */
+  --sink-coral: 5 49% 53%;        /* #BE5B50 */
+  --sink-dark-red: 352 52% 36%;   /* #8A2D3B */
+  --sink-maroon: 346 63% 25%;     /* #641B2E */
+
+  --background: 40 94% 78%;
+  --foreground: 346 63% 25%;
+
+  --card: 0 0% 100%;
+  --card-foreground: 346 63% 25%;
+
+  --popover: 0 0% 100%;
+  --popover-foreground: 346 63% 25%;
+
+  --primary: 352 52% 36%;
+  --primary-foreground: 40 94% 95%;
+
+  --secondary: 40 50% 90%;
+  --secondary-foreground: 346 63% 25%;
+
+  --muted: 40 30% 88%;
+  --muted-foreground: 346 40% 40%;
+
+  --accent: 5 49% 53%;
+  --accent-foreground: 0 0% 100%;
+
+  --destructive: 0 84% 60%;
+  --destructive-foreground: 0 0% 98%;
+
+  --border: 40 30% 80%;
+  --input: 40 30% 85%;
+  --ring: 352 52% 36%;
+
+  --radius: 1rem;
+}
+
+.dark {
+  --background: 346 63% 12%;
+  --foreground: 40 94% 90%;
+
+  --card: 346 50% 15%;
+  --card-foreground: 40 94% 90%;
+
+  --popover: 346 50% 15%;
+  --popover-foreground: 40 94% 90%;
+
+  --primary: 40 94% 78%;
+  --primary-foreground: 346 63% 20%;
+
+  --secondary: 346 40% 20%;
+  --secondary-foreground: 40 94% 85%;
+
+  --muted: 346 30% 18%;
+  --muted-foreground: 40 50% 70%;
+
+  --accent: 5 49% 53%;
+  --accent-foreground: 0 0% 100%;
+
+  --destructive: 0 62% 50%;
+  --destructive-foreground: 0 0% 98%;
+
+  --border: 346 30% 20%;
+  --input: 346 30% 20%;
+  --ring: 40 94% 78%;
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-family: var(--font-body);
+  }
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-display);
+    @apply tracking-tight;
+  }
+}
+
+/* Custom Scrollbar for cleaner UI */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  @apply bg-muted-foreground/20 rounded-full;
+}
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-muted-foreground/40;
+}
